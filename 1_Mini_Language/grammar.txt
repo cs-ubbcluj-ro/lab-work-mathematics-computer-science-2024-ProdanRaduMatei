@@ -37,14 +37,20 @@ Elements of the Programming Language
 <conditional_statement> ::= "if" "(" <expression> ")" <block> ["else" <block>]
 <loop_statement> ::= "while" "(" <expression> ")" <block>
 <block> ::= "{" <statement_list> "}"
-<expression> ::= <term> | <term> <add_op> <expression>
+<expression> ::= <term> | <term> <operation> <expression>
 <term> ::= <factor> | <factor> <mul_op> <term>
 <factor> ::= <identifier> | <constant> | "(" <expression> ")"
+<operation> ::= <add_op> | <mul_op> | <rel_op>
 <add_op> ::= "+" | "-"
 <mul_op> ::= "*" | "/"
+<rel_op> ::= "==" | "!=" | "<" | ">" | "<=" | ">="
 <identifier> ::= <letter> {<letter> | <digit> | "_"}
 <constant> ::= <integer_constant> | <float_constant>
 <integer_constant> ::= <digit> {<digit>}
 <float_constant> ::= <digit> {<digit>} "." <digit> {<digit>}
 <letter> ::= "a" | "b" | "c" | ... | "z" | "A" | "B" | "C" | ... | "Z"
 <digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<struct_definition> ::= "struct" <identifier> "{" <struct_field_list> "}" ";"
+<struct_field_list> ::= struct_field> | <struct_field> <struct_field_list>
+<struct_field> ::= <type> <identifier> ";"
+<type> ::= "int" | "float" | "struct" <identifier>
