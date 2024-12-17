@@ -1,7 +1,7 @@
 # Context-Free Grammar for the Minilanguage
 
 # Program Structure
-program -> statement_list
+program -> "start" statement_list "end"
 
 statement_list -> statement | statement statement_list
 
